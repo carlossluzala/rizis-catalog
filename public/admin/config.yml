@@ -88,9 +88,9 @@ collections:
                 widget: "string"
                 hint: "Tag name for displaying on the site"
 
-  - name: "posts"
-    label: "Posts"
-    folder: "content/posts/"
+  - name: "products"
+    label: "Produtos"
+    folder: "content/products/"
     extension: "mdx"
     format: "frontmatter"
     create: true
@@ -101,41 +101,15 @@ collections:
       - label: "Slug"
         name: "slug"
         widget: "string"
-      - label: "Title"
+      - label: "Título"
         name: "title"
         widget: "string"
-      - label: "Publish Date"
+      - label: "Data da publicação"
         name: "date"
         widget: "datetime"
-        format: "YYYY-MM-DD"
-        dateFormat: "YYYY-MM-DD"
+        format: "DD-MM-YYYY"
+        dateFormat: "DD-MM-YYYY"
         timeFormat: false
-      - label: Author
-        name: "author"
-        widget: relation
-        collection: "meta"
-        file: "authors"
-        searchFields:
-          - "authors.*.name"
-        displayFields:
-          - "authors.*.name"
-        valueField: "authors.*.slug"
-      - label: Tags
-        label_singular: "Tag"
-        name: "tags"
-        widget: list
-        summary: "{{fields.tag}}"
-        field:
-          label: Tag
-          name: tag
-          widget: relation
-          collection: "meta"
-          file: "tags"
-          searchFields:
-            - "tags.*.name"
-          displayFields:
-            - "tags.*.name"
-          valueField: "tags.*.slug"
-      - label: "Body"
+      - label: "Descrição"
         name: "body"
         widget: "markdown"
